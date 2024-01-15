@@ -8,7 +8,7 @@ public class Bird {
     public static int maxFrame;
     private boolean isJumping;
     private int originalBirdY;
-    private static final int DEFAULT_JUMP_HEIGHT = 200; // Hier die gewünschte Sprunghöhe einstellen
+    private static final int DEFAULT_JUMP_HEIGHT = 350;
     public Bird(){
         birdX = AppConstants.SCREEN_WIDTH/2 - AppConstants.getBitmapBank().getBirdWidth()/2;
         // birdY = AppConstants.SCREEN_HEIGHT/2 - AppConstants.getBitmapBank().getBackgroundHeight()/2;

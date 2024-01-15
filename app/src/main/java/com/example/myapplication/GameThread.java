@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Context;
 import android.graphics.Canvas;
 import android.os.SystemClock;
 import android.system.SystemCleaner;
@@ -12,6 +13,7 @@ public class GameThread  extends Thread {
     boolean isRunning; //Flag to detect whether the thread is running or not
     long startTime, loopTime; //Loop start time and loop duration
     long DELAY = 33; // Delay in milliseconds between screen refreshes
+    Context context;
 
     public GameThread (SurfaceHolder surfaceHolder){
         this.surfaceHolder = surfaceHolder;
@@ -29,6 +31,11 @@ public class GameThread  extends Thread {
                 synchronized (surfaceHolder){
                     AppConstants.getGameEngine().updateAndDrawBackgroundImage(canvas);
                     AppConstants.getGameEngine().updateAndDrawBird(canvas);
+                    AppConstants.getGameEngine().updateAndDrawBlock(canvas, context);
+
+                    // Überprüfen Sie die Kollisionen nach dem Zeichnen der Spielobjekte
+                    AppConstants.getGameEngine().checkCollisions();
+
                     //unlocking the canvas
                     surfaceHolder.unlockCanvasAndPost(canvas);
                 }

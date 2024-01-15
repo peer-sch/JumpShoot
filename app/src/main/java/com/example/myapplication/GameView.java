@@ -1,10 +1,15 @@
 package com.example.myapplication;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
@@ -13,16 +18,18 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     GameThread gameThread;
     SurfaceHolder holder; // Deklariere holder als Instanzvariable
     private static long lastTouchTime = 0;
-    private static final long TOUCH_DELAY = 500;
+    private static final long TOUCH_DELAY = 800;
     private boolean isTouchEnabled = true;
-
-    public void setTouchEnabled(boolean touchEnabled) {
-        isTouchEnabled = touchEnabled;
-    }
 
     public GameView(Context context) {
         super(context);
         initView();
+    }
+
+    @Override
+    public void draw(Canvas canvas) {
+        super.draw(canvas);
+       // AppConstants.getGameEngine();
     }
 
     @Override
@@ -34,6 +41,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         // } else {
         //     gameThread.start();
         // }
+
     }
 
     @Override

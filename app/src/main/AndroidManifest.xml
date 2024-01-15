@@ -25,6 +25,8 @@
         <activity android:name=".GameActivity"></activity>
         <activity android:name=".Einstellung"></activity>
         <activity android:name=".Score"></activity>
+        <activity android:name=".End"></activity>
+        <activity android:name=".LoginActivity"></activity>
 
     </application>
 

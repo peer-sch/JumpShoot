@@ -11,6 +11,7 @@ public class BitmapBank {
 
     Bitmap background;
     Bitmap[] bird;
+    Bitmap[] block;
     public BitmapBank(Resources res) {
         background = BitmapFactory.decodeResource(res, R.drawable.background_main);
         background = scaleImage(background);
@@ -19,32 +20,60 @@ public class BitmapBank {
         bird[1] = BitmapFactory.decodeResource(res, R.drawable.mensch2);
         bird[2] = BitmapFactory.decodeResource(res, R.drawable.mensch3);
         bird[3] = BitmapFactory.decodeResource(res, R.drawable.mensch4);
+
+        block = new Bitmap[4];
+        block[0] = BitmapFactory.decodeResource(res, R.drawable.mensch1);
+        block[1] = BitmapFactory.decodeResource(res, R.drawable.mensch2);
+        block[2] = BitmapFactory.decodeResource(res, R.drawable.mensch3);
+        block[3] = BitmapFactory.decodeResource(res, R.drawable.mensch4);
     }
 
     //Return bird bitmap pg frame
     public Bitmap getBird(int frame){
+
         return bird[frame];
     }
 
     public int getBirdWidth(){
+
         return bird[0].getWidth();
     }
 
     public int getBirdHeight(){
+
         return bird[0].getHeight();
+    }
+
+    //Return block bitmap pg frame
+    public Bitmap getBlock(int frame){
+
+        return block[frame];
+    }
+
+    public int getBlockWidth(){
+
+        return block[0].getWidth();
+    }
+
+    public int getBlockHeight(){
+
+        return block[0].getHeight();
     }
     //Return background bitmap
     public Bitmap getBackground(){
+
         return background;
     }
 
     //Return background width
     public int getBackgroundWidth(){
+
         return background.getWidth();
     }
 
     //Retrun background height
     public int getBackgroundHeight(){
+
         return background.getHeight();
     }
 

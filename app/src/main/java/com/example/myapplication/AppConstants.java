@@ -8,7 +8,7 @@ import android.view.WindowManager;
 public class AppConstants {
 
     static BitmapBank bitmapBank; //Bitmap object reference
-    static GameEngine gameEngine; // GameENgine object reference
+    static GameEngine gameEngine; // GameEngine object reference
     static int SCREEN_WIDTH, SCREEN_HEIGHT;
     static int gravity;
     static int VELOCITY_WHEN_JUMPED;
@@ -16,22 +16,22 @@ public class AppConstants {
     public static void initialization(Context context, GameView gameView) {
         setScreenSize(context);
         bitmapBank = new BitmapBank(context.getResources());
-        gameEngine = new GameEngine(gameView); // Hier GameView als Argument übergeben
+        gameEngine = new GameEngine(gameView);
         AppConstants.gravity = 3;
-        AppConstants.VELOCITY_WHEN_JUMPED = -40;
+        AppConstants.VELOCITY_WHEN_JUMPED = -30;
     }
 
     //Return BitmapBank instance
-    public static BitmapBank getBitmapBank(){
+    public static BitmapBank getBitmapBank() {
         return bitmapBank;
     }
 
     //return GameEngine instance
-    public static GameEngine getGameEngine(){
+    public static GameEngine getGameEngine() {
         return gameEngine;
     }
 
-    private static void setScreenSize(Context context){
+    private static void setScreenSize(Context context) {
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         Display display = wm.getDefaultDisplay();
         DisplayMetrics metrics = new DisplayMetrics();

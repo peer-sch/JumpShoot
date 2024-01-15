@@ -1,14 +1,22 @@
 package com.example.myapplication;
 
+import static com.example.myapplication.GameEngine.gameView;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class Spielen extends Activity {
+
+    private TextView scoreTextView;
+    private GameEngine gameEngine;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +25,9 @@ public class Spielen extends Activity {
 
         // Finde den Start-Button
         Button startButton = findViewById(R.id.startButton);
+
+        gameEngine = new GameEngine(gameView);
+        gameEngine.setSpielenActivity(this);
 
         // Setze den OnClickListener für den Start-Button
         startButton.setOnClickListener(new View.OnClickListener() {
@@ -28,8 +39,12 @@ public class Spielen extends Activity {
                 // Lade die neue XML-Layout-Datei für die GameView
                 setContentView(R.layout.activity_ingame);
 
+                // Initialisiere die Score-Anzeige
+                scoreTextView = findViewById(R.id.scoreTextView);
+                GameEngine.updateScore(1);
+                updateScoreDisplay();
+
                 // Initialisiere die GameView für die neue Layout-Datei
-                GameView gameView = new GameView(Spielen.this);
                 ConstraintLayout mainLayout = findViewById(R.id.activity_ingame);
                 ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams(
                         ConstraintLayout.LayoutParams.MATCH_PARENT,
@@ -40,11 +55,22 @@ public class Spielen extends Activity {
         });
     }
 
+    // Methode zur Aktualisierung der Score-Anzeige
+    public void updateScoreDisplay() {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                TextView scoreTextView = findViewById(R.id.scoreTextView);
+                scoreTextView.setText("Score: " + gameEngine.getScore());
+            }
+        });
+    }
+
     public void spielen(View view) {
         // Entferne die finish-Methode hier
         Intent intent = new Intent(this, GameActivity.class);
         startActivity(intent);
-        // finish(); // Entferne diese Zeile
+        finish(); // Entferne diese Zeile
     }
 
     public void zurueckButtonClicked2(View view) {
@@ -54,4 +80,3 @@ public class Spielen extends Activity {
         finish(); // Beende die aktuelle Activity (Einstellung), wenn du nicht möchtest, dass sie im Stapel bleibt.
     }
 }
-
