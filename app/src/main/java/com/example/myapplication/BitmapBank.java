@@ -8,7 +8,7 @@ import android.graphics.BitmapFactory;
 
 
 public class BitmapBank {
-
+//Bilder werden in der Bitmap gespeichert und die Bitmap Bilder werde  Scaliert
     Bitmap background;
     Bitmap[] bird;
     Bitmap[] block;

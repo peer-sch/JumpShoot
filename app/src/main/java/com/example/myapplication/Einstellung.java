@@ -10,7 +10,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 public class Einstellung extends Activity {
-
+//Einstellungsseite ohne große Funktion (Aktuell)
     private Switch switchDarkMode;
     private Switch switchMusic;
     private Switch switchAds;

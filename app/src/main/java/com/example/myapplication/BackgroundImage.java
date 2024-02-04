@@ -6,7 +6,7 @@ public class BackgroundImage {
     public BackgroundImage(){
         backgroundImageX = 0;
         backgroundImageY = 0;
-        backgroundImageVelocity = 3;
+        backgroundImageVelocity = 3; //Geschwindigkeit des Hintergrundes
     }
 
     //Getter method for getting the X-coordinate

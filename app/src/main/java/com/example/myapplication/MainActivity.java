@@ -35,16 +35,12 @@ public class MainActivity extends AppCompatActivity {
         loginNameTextView.setText(username);
 
     }
-
+//Einzelne Buttons
     public void startGame(View view) {
         Intent intent = new Intent(this, Spielen.class);
         startActivity(intent);
 
-        // Speichere in den SharedPreferences, dass das Spiel gestartet wurde
-        SharedPreferences preferences = getSharedPreferences("GAME_PREFERENCES", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putBoolean("isGameStarted", true);
-        editor.apply();
+
     }
 
     public void scoreV(View view) {

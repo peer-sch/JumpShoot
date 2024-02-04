@@ -24,7 +24,7 @@ public class Block {
         // Aktualisiere die X-Position des Blocks basierend auf der Geschwindigkeit
         blockX -= velocity;
 
-        // Wenn der Block den Bildschirm rechts verlässt, setze ihn wieder links
+        // Wenn der Block den Bildschirm links verlässt, setze ihn wieder links
         if (blockX < 0 - AppConstants.getBitmapBank().getBlockWidth()) {
             blockX = AppConstants.SCREEN_WIDTH;
         }

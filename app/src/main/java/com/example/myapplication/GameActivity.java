@@ -8,7 +8,7 @@ import android.widget.Button;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class GameActivity extends Activity {
-
+//InGame View um einen Zurückbutton zuhaben um das Spiel zu beenden
     private GameView gameView;
 
     private Button zuruckButton;
@@ -52,11 +52,11 @@ public class GameActivity extends Activity {
         // Erstelle einen Intent, um zur MainActivity zurückzukehren
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
-        finish(); // Beende die aktuelle Activity (Einstellung), wenn du nicht möchtest, dass sie im Stapel bleibt.
+        finish(); // Beende die aktuelle Activity
     }
 
     private void startGame() {
-        // Hier kannst du die Logik für den Spielstart implementieren
+
     }
 }
 

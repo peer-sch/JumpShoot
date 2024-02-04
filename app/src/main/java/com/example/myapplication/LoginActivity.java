@@ -50,8 +50,6 @@ public class LoginActivity extends AppCompatActivity {
                         editor.putString("username", user);
                         editor.apply();
 
-                        // Zum Hauptmenü wechseln oder andere erforderliche Aktionen ausführen
-                        // ...
                     } else {
                         Toast.makeText(LoginActivity.this, "Falsche Einlogg Daten", Toast.LENGTH_SHORT).show();
                     }

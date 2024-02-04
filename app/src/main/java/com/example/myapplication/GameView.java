@@ -26,11 +26,11 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         initView();
     }
 
-    @Override
+  /*  @Override
     public void draw(Canvas canvas) {
         super.draw(canvas);
        // AppConstants.getGameEngine();
-    }
+    }*/
 
     @Override
     public void surfaceCreated(@NonNull SurfaceHolder surfaceHolder) {
@@ -50,7 +50,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     @Override
     public void surfaceDestroyed(@NonNull SurfaceHolder surfaceHolder) {
-        if (gameThread != null && gameThread.isRunning()) {
+      /*  if (gameThread != null && gameThread.isRunning()) {
             gameThread.setIsRunning(false);
             boolean retry = true;
             while (retry) {
@@ -61,7 +61,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                     // Handle InterruptedException
                 }
             }
-        }
+        } */
     }
 
     void initView() {

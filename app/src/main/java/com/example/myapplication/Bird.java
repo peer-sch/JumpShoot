@@ -11,7 +11,6 @@ public class Bird {
     private static final int DEFAULT_JUMP_HEIGHT = 350;
     public Bird(){
         birdX = AppConstants.SCREEN_WIDTH/2 - AppConstants.getBitmapBank().getBirdWidth()/2;
-        // birdY = AppConstants.SCREEN_HEIGHT/2 - AppConstants.getBitmapBank().getBackgroundHeight()/2;
         birdY = AppConstants.SCREEN_HEIGHT - AppConstants.getBitmapBank().getBirdHeight() - 100;
         originalBirdY = birdY;
         currentFrame = 0;

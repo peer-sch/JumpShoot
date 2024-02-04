@@ -57,26 +57,23 @@ public class Spielen extends Activity {
 
     // Methode zur Aktualisierung der Score-Anzeige
     public void updateScoreDisplay() {
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                TextView scoreTextView = findViewById(R.id.scoreTextView);
-                scoreTextView.setText("Score: " + gameEngine.getScore());
-            }
-        });
+
+        TextView scoreTextView = findViewById(R.id.scoreTextView);
+        scoreTextView.setText("Score: " + gameEngine.getScore());
+
     }
 
     public void spielen(View view) {
         // Entferne die finish-Methode hier
         Intent intent = new Intent(this, GameActivity.class);
         startActivity(intent);
-        finish(); // Entferne diese Zeile
+        finish();
     }
 
     public void zurueckButtonClicked2(View view) {
         // Erstelle einen Intent, um zur MainActivity zurückzukehren
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
-        finish(); // Beende die aktuelle Activity (Einstellung), wenn du nicht möchtest, dass sie im Stapel bleibt.
+        finish(); // Beende die aktuelle Activity
     }
 }

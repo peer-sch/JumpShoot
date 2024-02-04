@@ -6,8 +6,8 @@ import android.view.Display;
 import android.view.WindowManager;
 
 public class AppConstants {
-
-    static BitmapBank bitmapBank; //Bitmap object reference
+//screen größe wird festgelegt
+    static BitmapBank bitmapBank; //Bitmap object reference to store images
     static GameEngine gameEngine; // GameEngine object reference
     static int SCREEN_WIDTH, SCREEN_HEIGHT;
     static int gravity;

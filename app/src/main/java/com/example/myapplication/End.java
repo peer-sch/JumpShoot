@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 public class End extends Activity {
-
+//End Screen wenn das spiel vorbei ist (Geht noch nicht)
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_end);

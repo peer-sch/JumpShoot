@@ -25,7 +25,7 @@ public class GameEngine {
         bird = new Bird();
         block = new Block();
         // 0 = Not started
-        // 1 = Playing
+        // 1 = Playing Wird in GameView auf 1 gesetzt
         // 2 = GameOver
         gameState = 0;
         GameEngine.gameView = gameView;
@@ -62,7 +62,7 @@ public class GameEngine {
         if (gameState == 1) {
             bird.update();
         } else {
-            // Der Vogel ist auf den Boden gefallen, setze den Sprungstatus zurück
+
             bird.setJumping(false);
         }
 
@@ -81,7 +81,7 @@ public class GameEngine {
         if (activity != null) {
             Intent intent = new Intent(activity, com.example.myapplication.End.class);
             activity.startActivity(intent);
-            activity.finish(); // Optional: Beende die aktuelle Aktivität, wenn du nicht möchtest, dass sie im Stapel bleibt.
+            activity.finish();
         } else {
             // Handle den Fall, wenn activity null ist (z.B. zeige eine Fehlermeldung an)
         }

@@ -10,8 +10,12 @@ import android.view.SurfaceHolder;
 public class GameThread  extends Thread {
 
     SurfaceHolder surfaceHolder; //Surfaceholder object reference
+    //SurfaceHolder ermöglicht es einer Anwendung, auf die Bildschirmoberfläche zuzugreifen
+    // und sie zu zeichnen, indem es Methoden bereitstellt, um den Zugriff auf den Canvas zu steuern, auf dem die Grafiken angezeigt werden
     boolean isRunning; //Flag to detect whether the thread is running or not
     long startTime, loopTime; //Loop start time and loop duration
+    //loopTime speichert die Zeit, die ein Durchlauf der Spielschleife benötigt, um sicherzustellen, dass das Spiel mit einer konstanten Aktualisierungsrate läuft,
+    // während der Thread pausiert wird, um die gewünschte Verzögerung zwischen den Schleifendurchläufen einzuhalten
     long DELAY = 33; // Delay in milliseconds between screen refreshes
     Context context;
 
@@ -27,11 +31,14 @@ public class GameThread  extends Thread {
             startTime = SystemClock.uptimeMillis();
             //locking the canvas
             Canvas canvas = surfaceHolder.lockCanvas(null);
+            //Mit surfaceHolder zugriff auf Canvas, um zu "zeichnen"
             if(canvas != null){
                 synchronized (surfaceHolder){
                     AppConstants.getGameEngine().updateAndDrawBackgroundImage(canvas);
                     AppConstants.getGameEngine().updateAndDrawBird(canvas);
                     AppConstants.getGameEngine().updateAndDrawBlock(canvas, context);
+
+                    //Hier wird der Spieler, der Gegner und das Hintergrundbild gezeichnet
 
                     // Überprüfen Sie die Kollisionen nach dem Zeichnen der Spielobjekte
                     AppConstants.getGameEngine().checkCollisions();
